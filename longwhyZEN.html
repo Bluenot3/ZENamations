@@ -1,0 +1,369 @@
+<html>
+<head>
+  <base href="https://zen-ai.com/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why ZEN? - Revolutionizing AI Infrastructure</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+    :root {
+      --primary-color: #00ccff;
+      --secondary-color: #ff00cc;
+      --background-color: #000011;
+      --text-color: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* Header Styles */
+    .header {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .glowing-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 10vw;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+      position: relative;
+      display: inline-block;
+    }
+
+    .electric-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards 1s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Services Section */
+    .services {
+      padding: 50px 0;
+      background: linear-gradient(45deg, #000022, #000044);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: rgba(0, 204, 255, 0.1);
+      border-radius: 15px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+      transform: rotate(45deg);
+      transition: all 0.5s ease;
+      opacity: 0;
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0, 204, 255, 0.2);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .service-title {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+
+    /* IaaS Section */
+    .iaas-section {
+      padding: 50px 0;
+      background: linear-gradient(135deg, #000033, #000066);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .iaas-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .iaas-title {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .iaas-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      color: var(--secondary-color);
+      font-weight: bold;
+    }
+
+    /* Particle Animation */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .glowing-title {
+        font-size: 14vw;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .iaas-title {
+        font-size: 2rem;
+      }
+
+      .iaas-description {
+        font-size: 0.9rem;
+      }
+
+      .service-card {
+        padding: 20px;
+      }
+
+      .service-icon {
+        font-size: 2rem;
+      }
+
+      .service-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1 class="glowing-title">
+        Why ZEN?
+        <svg class="electric-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <g filter="url(#glow)">
+            <path d="M0,50 Q25,0 50,50 T100,50" fill="none" stroke="#00ccff" stroke-width="0.5">
+              <animate attributeName="d" 
+                       dur="3s" 
+                       repeatCount="indefinite"
+                       values="M0,50 Q25,0 50,50 T100,50;
+                               M0,50 Q25,100 50,50 T100,50;
+                               M0,50 Q25,0 50,50 T100,50"/>
+            </path>
+            <path d="M0,50 Q25,100 50,50 T100,50" fill="none" stroke="#ff00cc" stroke-width="0.5">
+              <animate attributeName="d" 
+                       dur="3s" 
+                       repeatCount="indefinite"
+                       values="M0,50 Q25,100 50,50 T100,50;
+                               M0,50 Q25,0 50,50 T100,50;
+                               M0,50 Q25,100 50,50 T100,50"/>
+            </path>
+          </g>
+        </svg>
+      </h1>
+      <p class="subtitle">Revolutionizing AI Infrastructure</p>
+    </div>
+  </header>
+
+  <section class="services">
+    <div class="container">
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🧠</div>
+          <h3 class="service-title">AI-Driven Customer Insights</h3>
+          <p>Gain deep insights into customer behavior and trends with advanced AI analytics.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💼</div>
+          <h3 class="service-title">Automated Workflow Management</h3>
+          <p>Streamline your operations and reduce errors with seamless automation.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔗</div>
+          <h3 class="service-title">Blockchain-Powered Security</h3>
+          <p>Ensure top-level security for transactions and data with blockchain technology.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3 class="service-title">Immersive Brand Customization</h3>
+          <p>Deepen your brand’s presence with tailored digital content, emoji, stickers, and more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="iaas-section">
+    <div id="particles-js"></div>
+    <div class="container iaas-content">
+      <h2 class="iaas-title">AI/ML Containers Revolution</h2>
+      <p class="iaas-description">ZEN AI revolutionizes infrastructure with our <span class="highlight">IaaS</span> offering, integrating neural networks into local hardware for unparalleled computational power and security.</p>
+      <p class="iaas-description">Our solution stands out for its <span class="highlight">robustness and innovation</span>, empowering organizations with data processing efficiency and computational independence.</p>
+      <p class="iaas-description"><span class="highlight">Security is paramount</span>. We safeguard sensitive data and ensure compliance through locally housed hardware and neural network integration.</p>
+      <p class="iaas-description">Unlock AI's full potential while maintaining control. Our tailored solutions drive innovation across healthcare, manufacturing, retail, and beyond.</p>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const title = document.querySelector('.glowing-title');
+      
+      title.addEventListener('mousemove', (e) => {
+        const { offsetX, offsetY, target } = e;
+        const { offsetWidth, offsetHeight } = target;
+
+        const moveX = (offsetX / offsetWidth - 0.5) * 50;
+        const moveY = (offsetY / offsetHeight - 0.5) * 50;
+
+        title.style.textShadow = `
+          ${moveX}px ${moveY}px 20px rgba(0,204,255,0.7),
+          ${moveX * 2}px ${moveY * 2}px 40px rgba(0,204,255,0.5),
+          ${moveX * 3}px ${moveY * 3}px 60px rgba(0,204,255,0.3)
+        `;
+      });
+
+      title.addEventListener('mouseleave', () => {
+        title.style.textShadow = '';
+      });
+
+      // Particles.js Configuration
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#00ccff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+          size: { value: 3, random: true, anim: { enable: true, speed: 4, size_min: 0.3, sync: false } },
+          line_linked: { enable: true, distance: 150, color: "#00ccff", opacity: 0.4, width: 1 },
+          move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out", bounce: false }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+          modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+        },
+        retina_detect: true
+      });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.service-card, .iaas-description').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
