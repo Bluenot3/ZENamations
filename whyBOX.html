@@ -1,0 +1,456 @@
+<html><head><base href="https://zen-ai.com/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ZEN - Revolutionizing Business with AI</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #00f2ff;
+  --secondary-color: #ff00cc;
+  --background-color: #000022;
+  --text-color: #ffffff;
+  --card-bg: rgba(0, 242, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header Styles */
+.header {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(0,242,255,0.1) 0%, rgba(0,0,34,1) 100%);
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.glowing-title {
+  font-size: 6vw;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+  position: relative;
+  display: inline-block;
+}
+
+.glowing-title::after {
+  content: 'Why ZEN?';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  animation: borderAnimation 4s infinite alternate;
+}
+
+@keyframes borderAnimation {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards 1s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 30px 0;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.service-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 242, 255, 0.2);
+}
+
+.service-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.service-title {
+  font-size: 0.9rem;
+  margin-bottom: 3px;
+  color: var(--primary-color);
+}
+
+.service-description {
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+
+/* Energy Flow Animation */
+.energy-flow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.energy-particle {
+  position: absolute;
+  bottom: -10px;
+  width: 3px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0;
+  animation: floatUp 2s infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-50vh) scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh) scale(0.5);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .glowing-title {
+    font-size: 10vw;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .service-card {
+    padding: 10px;
+  }
+
+  .service-icon {
+    font-size: 1.2rem;
+  }
+
+  .service-title {
+    font-size: 0.8rem;
+  }
+
+  .service-description {
+    font-size: 0.6rem;
+  }
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🧠</div>
+        <h3 class="service-title">AI-Driven Insights</h3>
+        <p class="service-description">Deep customer behavior analysis</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3 class="service-title">Workflow Automation</h3>
+        <p class="service-description">Streamline operations intelligently</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔗</div>
+        <h3 class="service-title">Blockchain Security</h3>
+        <p class="service-description">Enhanced data protection</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🥽</div>
+        <h3 class="service-title">VR Training</h3>
+        <p class="service-description">Immersive learning experiences</p>
+      </div>
+      <div class="header-content">
+        <h1 class="glowing-title">Why ZEN?</h1>
+        <p class="subtitle">Revolutionizing Business with AI</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <h3 class="service-title">Smart Inventory</h3>
+        <p class="service-description">AI-powered supply chain optimization</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3 class="service-title">Marketing Automation</h3>
+        <p class="service-description">Personalized customer outreach</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3 class="service-title">IoT Operations</h3>
+        <p class="service-description">Real-time data analytics</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💬</div>
+        <h3 class="service-title">Telegram Apps</h3>
+        <p class="service-description">Custom engagement solutions</p>
+      </div>
+    </div>
+    <div class="energy-flow" id="energyFlow"></div>
+  </header>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const title = document.querySelector('.glowing-title');
+      const energyFlow = document.getElementById('energyFlow');
+      
+      // Interactive glow effect
+      title.addEventListener('mousemove', (e) => {
+        const { offsetX, offsetY, target } = e;
+        const { offsetWidth, offsetHeight } = target;
+
+        const moveX = (offsetX / offsetWidth - 0.5) * 50;
+        const moveY = (offsetY / offsetHeight - 0.5) * 50;
+
+        title.style.textShadow = `
+          ${moveX}px ${moveY}px 20px rgba(0,242,255,0.7),
+          ${moveX * 2}px ${moveY * 2}px 40px rgba(0,242,255,0.5),
+          ${moveX * 3}px ${moveY * 3}px 60px rgba(0,242,255,0.3)
+        `;
+      });
+
+      title.addEventListener('mouseleave', () => {
+        title.style.textShadow = '0 0 10px #00f2ff, 0 0 20px #00f2ff, 0 0 30px #00f2ff';
+      });
+
+      // Energy flow animation
+      function createEnergyParticle() {
+        const particle = document.createElement('div');
+        particle.classList.add('energy-particle');
+        particle.style.left = `${Math.random() * 100}%`;
+        energyFlow.appendChild(particle);
+
+        gsap.to(particle, {
+          y: `-${window.innerHeight + 10}px`,
+          opacity: 0,
+          scale: 0.5,
+          duration: 2,
+          ease: "power1.out",
+          onComplete: () => {
+            particle.remove();
+          }
+        });
+
+        // Charge up effect
+        gsap.to(title, {
+          textShadow: '0 0 20px #00f2ff, 0 0 40px #00f2ff, 0 0 60px #00f2ff, 0 0 80px #00f2ff',
+          duration: 0.2,
+          yoyo: true,
+          repeat: 1
+        });
+      }
+
+      // Create energy particles at regular intervals
+      setInterval(createEnergyParticle, 100);
+
+      // Intersection Observer for fade-in animations
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            gsap.to(entry.target, {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              ease: "power2.out"
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.service-card').forEach(el => {
+        gsap.set(el, {
+          opacity: 0,
+          y: 20
+        });
+        observer.observe(el);
+      });
+
+      // Floating animation for service cards
+      gsap.to('.service-card', {
+        y: '-=10',
+        duration: 2,
+        ease: 'power1.inOut',
+        stagger: {
+          each: 0.1,
+          yoyo: true,
+          repeat: -1
+        }
+      });
+
+      // Particle system for background
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      document.body.appendChild(canvas);
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      canvas.style.position = 'fixed';
+      canvas.style.top = '0';
+      canvas.style.left = '0';
+      canvas.style.zIndex = '-1';
+
+      const particles = [];
+      const particleCount = 50;
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2 + 1;
+          this.speedX = Math.random() * 3 - 1.5;
+          this.speedY = Math.random() * 3 - 1.5;
+        }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          if (this.size > 0.2) this.size -= 0.1;
+        }
+        draw() {
+          ctx.fillStyle = 'rgba(0, 242, 255, 0.8)';
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      function init() {
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+          if (particles[i].size <= 0.2) {
+            particles.splice(i, 1);
+            i--;
+          }
+        }
+        while (particles.length < particleCount) {
+          particles.push(new Particle());
+        }
+        requestAnimationFrame(animateParticles);
+      }
+
+      init();
+      animateParticles();
+
+      window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+    });
+  </script>
+</body>
+</html>
